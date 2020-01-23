@@ -98,7 +98,7 @@ else
 # Executing a Transact-SQL query using the Invoke-Sqlcmd command
 try {
     Write-Output ""
-    Write-Output "Trying to execute the Transact-SQL query, please wait..."
+    Write-Output "Trying to execute the Transact-SQL query on the database $DatabaseName, please wait..."
     Start-Sleep -s 10
     Invoke-Sqlcmd -ServerInstance $ServerFQDN -User $AutomationAccountCredentials.UserName -Password $AutomationAccountCredentials.GetNetworkCredential().Password -Database $DatabaseName -ConnectionTimeout 30 -OutputSqlErrors $true -AbortOnError -Query $SQLQuery -Verbose
 
